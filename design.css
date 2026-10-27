@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    background-image: url("img/mainbackground.jpg");
+    background-size: cover;
+}
+
+.navbar {
+    background-color: #060606;
+    padding: 0px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    color: white;
+    font-size: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.links{
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 40px;
+    font-size: 18px;
+    font-family: 'Pixelify Sans', sans-serif;
+    margin-left: auto;
+}
+
+#kina {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    margin-left: 30px;
+    font-size: 25px;
+    font-family: 'Pixelify Sans', sans-serif;
+    margin-right: auto;
+}
+
+.links a,
+.links a:link,
+.links a:visited,
+.links a:active {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: blue;
+}
+
+#kina a,
+#kina a:link,
+#kina a:visited,
+#kina a:active {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 40px;
+    transition: color 0.3s ease;
+}
+
+#kina a:hover {
+    color: blue;
+}
+
+/* Every style sheet has everything above here (maintained layout) */
+
+.title{
+    text-align: center;
+    margin: 0 auto;
+    font-family:'Pixelify Sans', sans-serif;
+    font-size: 40px;
+    color: white;
+    padding: 15px;
+}
+
+.art-gallery {
+    margin-top: -40px;
+    columns: 3;
+    column-gap: 45px;
+    padding: 0px 90px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.art-frame {
+    padding: 10px;
+    margin-bottom: 25px;
+    break-inside: avoid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: floatIn 0.5s ease-out both;
+}
+
+.art-frame img {
+    border: 1px solid white;
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 15px 20px 30px rgba(0, 0, 0, 0.7);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.art-frame:hover img {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 15px 20px 30px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Faster stagger */
+.art-frame:nth-child(1) { animation-delay: 0.05s; }
+.art-frame:nth-child(2) { animation-delay: 0.1s; }
+.art-frame:nth-child(3) { animation-delay: 0.15s; }
+.art-frame:nth-child(4) { animation-delay: 0.2s; }
+.art-frame:nth-child(5) { animation-delay: 0.25s; }
+.art-frame:nth-child(6) { animation-delay: 0.3s; }
