@@ -36,51 +36,57 @@
 
     <!-- LEFT: Image carousel -->
     <div class="carousel">
-    <div class="carousel-window">
-        <div class="carousel-track" id="carousel-track">
-            <img src="img/dcposter.png" alt="Design 1">
-            <img src="img/rrbook.png" alt="Design 2">
-            <img src="img/design3.jpg" alt="Design 3">
-            <img src="img/design4.jpg" alt="Design 4">
+        <div class="carousel-window">
+            <div class="carousel-track" id="carousel-track">
+
+                <div class="carousel-slide">
+                    <img src="img/dcposter.png" alt="Design 1">
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="img/rrbook.png" alt="Design 2">
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="img/design3.jpg" alt="Design 3">
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="img/design4.jpg" alt="Design 4">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="carousel-buttons">
+            <button onclick="changeSlide(-1)">←</button>
+            <button onclick="changeSlide(1)">→</button>
         </div>
     </div>
-
-    <div class="carousel-buttons">
-        <button onclick="changeSlide(-1)">←</button>
-        <button onclick="changeSlide(1)">→</button>
-    </div>
-</div>
 
     <!-- RIGHT: Project description -->
     <div class="project-info">
         <h1>Project Title</h1>
 
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nemo soluta error voluptates, eaque quae quo corrupti deleniti velit sint eligendi sed at reprehenderit harum nam nihil et vitae facilis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nemo soluta error voluptates, eaque quae quo corrupti deleniti velit sint eligendi sed at reprehenderit harum nam nihil et vitae facilis?Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nemo soluta error voluptates, eaque quae quo corrupti deleniti velit sint eligendi sed at reprehenderit harum nam nihil et vitae facilis?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Corporis nemo soluta error voluptates, eaque quae quo corrupti
+            deleniti velit sint eligendi sed at reprehenderit harum nam nihil
+            et vitae facilis? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Corporis nemo soluta error voluptates.
         </p>
     </div>
 
 </div>
 
-
-
 <script>
     let currentSlide = 0;
 
     const track = document.getElementById("carousel-track");
-    const slides = track.querySelectorAll("img");
+    const slides = track.querySelectorAll(".carousel-slide");
 
     function changeSlide(direction) {
-        currentSlide += direction;
-
-        if (currentSlide >= slides.length) {
-            currentSlide = 0;
-        }
-
-        if (currentSlide < 0) {
-            currentSlide = slides.length - 1;
-        }
-
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
         track.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
 </script>
