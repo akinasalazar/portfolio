@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="spiderposter.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+<body>
+        
+    <nav class="navbar">
+        <h1 id="kina">
+            <a href="index.html">Akina Salazar</a>
+        </h1>
+
+        <div class="links">
+            <a href="designs.html">Designs</a>
+            <a href="advertisements.html">Advertisements</a>
+            <a href="about.html">About Me</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+<!-- every page has everything above -->
+
+<div class="project-container">
+
+    <!-- LEFT: Image carousel -->
+    <div class="carousel">
+        <div class="carousel-window">
+            <div class="carousel-track" id="carousel-track">
+
+                <div class="carousel-slide">
+                    <img src="img/spiderposter.png" alt="Design 1">
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="img/design2.png" alt="Design 2">
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="img/design3.jpg" alt="Design 3">
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="img/design4.jpg" alt="Design 4">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="carousel-buttons">
+            <button onclick="changeSlide(-1)">←</button>
+            <button onclick="changeSlide(1)">→</button>
+        </div>
+    </div>
+
+    <!-- RIGHT: Project description -->
+    <div class="project-info">
+        <h1>Project Title</h1>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Corporis nemo soluta error voluptates, eaque quae quo corrupti
+            deleniti velit sint eligendi sed at reprehenderit harum nam nihil
+            et vitae facilis? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Corporis nemo soluta error voluptates. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus quibusdam exercitationem similique nemo amet ab accusamus. Voluptates non laudantium quam placeat. Impedit, in harum. Obcaecati ratione natus fuga excepturi vero!
+        </p>
+    </div>
+
+</div>
+
+<script>
+    let currentSlide = 0;
+
+    const track = document.getElementById("carousel-track");
+    const slides = track.querySelectorAll(".carousel-slide");
+
+    function changeSlide(direction) {
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+</script>
+
+ </body>
+</html>
