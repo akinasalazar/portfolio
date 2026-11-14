@@ -4,6 +4,10 @@ body {
     background-size: cover;
 }
 
+*{
+    overscroll-behavior: none;
+}
+
 .navbar {
     background-color: #060606;
     padding: 0px;
